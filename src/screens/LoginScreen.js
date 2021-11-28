@@ -1,20 +1,41 @@
-import React from 'react'
-import { SafeAreaView } from 'react-native'
-import { Button, Text } from 'react-native-paper'
+import React, { useState } from 'react'
+import { SafeAreaView, StyleSheet } from 'react-native'
+import { Button, Text, TextInput } from 'react-native-paper'
 
 const LoginScreen = (props) => {
+
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+
     const loginHandler = () => {
         console.log('Login Handler')
         props.navigation.navigate('HomeScreen')
     }
     return (
         <SafeAreaView>
-            <Text>Login Screen</Text>
+            <TextInput 
+                label="Email"
+                placeholder="valid@email.com"
+            />
+            <TextInput 
+                label="Password"
+                placeholder="Min 8 characters"
+                secureTextEntry={true}
+            />
             <Button
-                icon="camera"
+                icon="account-arrow-right-outline"
                 mode="contained"
                 onPress={loginHandler}
-            ></Button>
+            >
+                Login
+            </Button>
+            <Button
+                icon="account-clock-outline"
+                mode="contained"
+                onPress={loginHandler}
+            >
+                Forgot Password
+            </Button>
         </SafeAreaView>
     )
 }
