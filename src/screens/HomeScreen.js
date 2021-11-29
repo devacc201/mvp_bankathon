@@ -4,7 +4,28 @@ import { Text } from 'react-native-paper'
 import { Avatar, Button, Card, Title, Paragraph } from 'react-native-paper';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
+const LoginScreen = (props) => {
+    const loginHandler = () => {
+        console.log('Login Handler')
+        props.navigation.navigate('HomeScreen')
+    }
+    return (
+        <SafeAreaView>
+            <Text>Login Screen</Text>
+            <Button
+                icon="camera"
+                mode="contained"
+                onPress={loginHandler}
+            ></Button>
+        </SafeAreaView>
+    )
+}
+
 const HomeScreen = (props) => {
+    const loginHandler = () => {
+        console.log('Login Handler')
+        props.navigation.navigate('CreateNetwork')
+    }
     return (
         <SafeAreaView>
             <TouchableOpacity>
@@ -36,7 +57,16 @@ const HomeScreen = (props) => {
                         <Button>Cancel</Button>
                         <Button>Ok</Button>
                     </Card.Actions> */}
+
                 </Card>
+                <SafeAreaView>
+                    <Text>Login Screen</Text>
+                    <Button
+                        icon="camera"
+                        mode="contained"
+                        onPress={loginHandler}
+                    ></Button>
+                </SafeAreaView>
             </TouchableOpacity>
         </SafeAreaView>
     )
