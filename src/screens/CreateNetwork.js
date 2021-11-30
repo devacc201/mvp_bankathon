@@ -3,6 +3,7 @@ import { View, StyleSheet, ScrollView  } from 'react-native'
 import { Title, Button, Text, TextInput, Appbar, ProgressBar, Colors, Paragraph} from 'react-native-paper';
 import { Formik } from 'formik';
 import * as yup from 'yup'
+import Header from '../components/Header';
 
 const loginValidationSchema = yup.object().shape({
   networkName: yup
@@ -21,12 +22,16 @@ const CreateNetwork = (props) => {
   }
   return (
         <View>
-            <Appbar.Header>
+            <Header 
+              navigation={props.navigation}
+              title="Crear Red"
+            />
+            {/* <Appbar.Header>
             <Appbar.BackAction/>
             <Appbar.Content title="Crear Red" subtitle="" />
             <Appbar.Action icon="magnify" />
             <Appbar.Action icon="dots-vertical" />
-            </Appbar.Header>
+            </Appbar.Header> */}
  
             <View style={styles.container}>
               <Title style={styles.title}>Información Básica</Title> 

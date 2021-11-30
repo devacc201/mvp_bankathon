@@ -8,9 +8,14 @@ const HomeScreen = (props) => {
     const communityHandler = () => {
         props.navigation.navigate('CreateNetwork')
     }
+
+    const networkHandler = () => {
+        props.navigation.navigate('NetworkScreen')
+    }
+    
     return (
         <SafeAreaView>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={networkHandler}>
                 <Card>
                     <Card.Title 
                         title="Invitacion"
