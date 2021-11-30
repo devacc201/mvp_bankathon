@@ -116,12 +116,12 @@ const styles = StyleSheet.create({
  },
  input: {
     //fontSize: '12px', 
-    marginBottom: '10px',
+    marginBottom: 10,
     //marginTop: 50,
   },
   label: {
-    paddingTop: '15px',  
-    paddingBottom: '10px',
+    paddingTop: 15,  
+    paddingBottom: 10,
     fontWeight: 'bold',
     fontSize: 16,
   },

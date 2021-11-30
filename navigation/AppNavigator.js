@@ -7,8 +7,6 @@ import CreateNetwork from '../src/screens/CreateNetwork'
 import Rules from '../src/screens/Rules'
 import AddMembers from '../src/screens/AddMembers'
 
-
-
 const Stack = createNativeStackNavigator()
 
 const screen_options = {
