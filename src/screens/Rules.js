@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, StyleSheet  } from 'react-native'
+import { View, StyleSheet, ScrollView  } from 'react-native'
 import { Title, Button, Text, TextInput, Appbar, ProgressBar, Colors, Paragraph, RadioButton, Checkbox} from 'react-native-paper';
 import { Formik, useFormik } from 'formik';
 import * as yup from 'yup'
@@ -32,6 +32,7 @@ const Rules = (props) => {
   }
     return (
         <View>
+          
             <Appbar.Header>
             <Appbar.BackAction/>
             <Appbar.Content title="Crear Red" subtitle="" />
@@ -49,7 +50,7 @@ const Rules = (props) => {
                 onSubmit={values => console.log(values), continueHandler}
               >
                 {({ handleChange, handleBlur, handleSubmit, values, errors, isValid, touched }) => (
-                  <View>
+                  <ScrollView>
                   <Text style={styles.label}>Duración</Text>
                     <TextInput
                       style={styles.input}
@@ -152,12 +153,11 @@ const Rules = (props) => {
                       Continuar
                     </Button>
     
-                  </View>
+                  </ScrollView>
                 )}
               </Formik>
-
             </View>     
-
+          
         </View>
              
     )
@@ -177,18 +177,18 @@ const styles = StyleSheet.create({
  },
  input: {
     //fontSize: '12px', 
-    marginBottom: '10px',
+    marginBottom: 10,
     //marginTop: 50,
   },
   label: {
-    paddingTop: '15px',  
-    paddingBottom: '10px',
+    paddingTop: 15,  
+    paddingBottom: 10,
     fontWeight: 'bold',
     fontSize: 16,
   },
   textArea: {
     height: 120,
-    marginBottom: '10px',
+    marginBottom: 10,
   },
   title: {
     fontWeight: 'bold',
