@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, StyleSheet  } from 'react-native'
+import { View, StyleSheet, ScrollView  } from 'react-native'
 import { Title, Button, Text, TextInput, Appbar, ProgressBar, Colors, Paragraph} from 'react-native-paper';
 import { Formik } from 'formik';
 import * as yup from 'yup'
@@ -38,6 +38,7 @@ const CreateNetwork = (props) => {
               >
                 {({ handleChange, handleBlur, handleSubmit, values, errors, isValid, touched }) => (
                   <View>
+                    <ScrollView>
                     <Text style={styles.label}>Nombre</Text>
                     <TextInput
                       style={styles.input}
@@ -67,7 +68,7 @@ const CreateNetwork = (props) => {
                       disabled={!isValid}> 
                       Continuar
                     </Button>
-    
+                  </ScrollView>
                   </View>
                 )}
               </Formik>
@@ -83,18 +84,18 @@ const styles = StyleSheet.create({
  },
  input: {
     //fontSize: '12px', 
-    marginBottom: '10px',
+    marginBottom: 10,
     //marginTop: 50,
   },
   label: {
-    paddingTop: '15px',  
-    paddingBottom: '10px',
+    paddingTop: 15,  
+    paddingBottom: 10,
     fontWeight: 'bold',
     fontSize: 16,
   },
   textArea: {
     height: 120,
-    marginBottom: '10px',
+    marginBottom: 10,
   },
   title: {
     fontWeight: 'bold',
