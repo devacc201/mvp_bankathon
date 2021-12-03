@@ -13,15 +13,15 @@ const NetworkScreen = (props) => {
                 navigation={props.navigation}
                 title="Mis Redes"
             />
+            <ScrollView style={styles.container}>
             <Title>{Labels.network_title}</Title>
             <Paragraph>{Labels.network_description}</Paragraph>
-            <ScrollView style={styles.container}>
                 <List.Section>
-                    <List.Subheader>Redes</List.Subheader>
-                    <List.Item title="First Item" left={() => <List.Icon icon="folder" />} />
+                    <List.Subheader style={styles.title}>Redes</List.Subheader>
+                    <List.Item title="Red 1" left={() => <List.Icon icon="network" />} />
                     <List.Item
-                        title="Second Item"
-                        left={() => <List.Icon color="#000" icon="folder" />}
+                        title="Red 2"
+                        left={() => <List.Icon color="#000" icon="network" />}
                     />
                 </List.Section>
             </ScrollView>
@@ -32,7 +32,12 @@ const NetworkScreen = (props) => {
 const styles = StyleSheet.create({
  container: {
     padding: 20,
- }
+ },
+ title: {
+    fontWeight: 'bold',
+    textAlign: 'center',
+    fontSize: 20
+  },
 });
 
 export default NetworkScreen
