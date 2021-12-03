@@ -50,7 +50,7 @@ const AddMembers = (props) => {
                     <FieldArray 
                         name="members"
                         render={arrayHelpers => (<View>
-                            <Text style={styles.label}>Prueba</Text>
+                            <Text style={styles.label}>Nombre</Text>
                             <TextInput
                             style={styles.input}
                             label="Nombre"
