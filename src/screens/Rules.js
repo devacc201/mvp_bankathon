@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, StyleSheet, ScrollView  } from 'react-native'
+import { View, StyleSheet, ScrollView, SafeAreaView  } from 'react-native'
 import { Title, Button, Text, TextInput, Appbar, ProgressBar, Colors, Paragraph, RadioButton, Checkbox} from 'react-native-paper';
 import { Formik, useFormik } from 'formik';
 import * as yup from 'yup'
@@ -31,6 +31,8 @@ const Rules = (props) => {
     props.navigation.navigate('AddMembers')
   }
     return (
+      <SafeAreaView>
+      <ScrollView>
         <View>
           
             <Appbar.Header>
@@ -159,7 +161,9 @@ const Rules = (props) => {
             </View>     
           
         </View>
-             
+        </ScrollView>   
+        </SafeAreaView>
+           
     )
 }
 
