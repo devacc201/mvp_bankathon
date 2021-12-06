@@ -12,6 +12,8 @@ import ProjectScreen from '../src/screens/ProjectScreen'
 import ServiceDetails from '../src/screens/ServiceDetails'
 import ServiceScreen from '../src/screens/ServiceScreen'
 import TermsAndConditions from '../src/screens/TermsAndConditions'
+import CreateLoan from '../src/screens/CreateLoan'
+
 
 
 const Stack = createNativeStackNavigator()
@@ -38,6 +40,8 @@ const AppNavigator = () => {
                 <Stack.Screen name="ServiceDetails" component={ServiceDetails} />
                 <Stack.Screen name="ServiceScreen" component={ServiceScreen} />
                 <Stack.Screen name="TermsAndConditions" component={TermsAndConditions} />
+                <Stack.Screen name="CreateLoan" component={CreateLoan} />
+
 
             </Stack.Navigator>
         )

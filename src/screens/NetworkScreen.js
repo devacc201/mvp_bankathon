@@ -1,12 +1,22 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { SafeAreaView, ScrollView, StyleSheet, View } from 'react-native'
 import { Paragraph, Title, List } from 'react-native-paper'
 // Custom Components
 import Header from '../components/Header'
+import CFooter from '../components/Footer'
+
 // Labels
 import Labels from '../i18n/Labels'
 
+
+
 const NetworkScreen = (props) => {
+    const continueHandler = () => {
+        props.navigation.navigate('ProjectScreen')
+      }
+      const continueHandler1 = () => {
+        props.navigation.navigate('ServiceScreen')
+      } 
     return (
         <SafeAreaView>
             <Header 
@@ -18,12 +28,20 @@ const NetworkScreen = (props) => {
             <Paragraph>{Labels.network_description}</Paragraph>
                 <List.Section>
                     <List.Subheader style={styles.title}>Redes</List.Subheader>
-                    <List.Item title="Red 1" left={() => <List.Icon icon="network" />} />
+                    <List.Item 
+                        title="Red 1" 
+                        left={() => <List.Icon icon="network" />} 
+                        onPress={continueHandler1} 
+                    />
                     <List.Item
+                        button={true}
                         title="Red 2"
-                        left={() => <List.Icon color="#000" icon="network" />}
+                        onPress={continueHandler} 
+                        left={() => <List.Icon color="#000" icon="network" 
+                                               />}
                     />
                 </List.Section>
+                <CFooter></CFooter>
             </ScrollView>
         </SafeAreaView>
     )

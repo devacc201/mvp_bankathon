@@ -9,7 +9,7 @@ const LoginScreen = (props) => {
 
     const loginHandler = () => {
         console.log('Login Handler')
-        props.navigation.navigate('HomeScreen')
+        props.navigation.navigate('CreateNetwork')
     }
     return (
         <SafeAreaView>
@@ -38,15 +38,15 @@ const LoginScreen = (props) => {
                 mode="contained"
                 onPress={loginHandler}
             >
-                Login
+                Ingresar
             </Button>
             <Button
                 style={styles.button}
                 icon="account-clock-outline"
-                mode="contained"
+                mode="outlined"
                 onPress={loginHandler}
             >
-                Forgot Password
+                Olvido su Contraseña            
             </Button>
             </ScrollView>
         </SafeAreaView>

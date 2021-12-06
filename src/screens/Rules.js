@@ -3,6 +3,8 @@ import { View, StyleSheet, ScrollView, SafeAreaView  } from 'react-native'
 import { Title, Button, Text, TextInput, Appbar, ProgressBar, Colors, Paragraph, RadioButton, Checkbox} from 'react-native-paper';
 import { Formik, useFormik } from 'formik';
 import * as yup from 'yup'
+import Header from '../components/Header';
+
 
 
 const loginValidationSchema = yup.object().shape({
@@ -32,16 +34,12 @@ const Rules = (props) => {
   }
     return (
       <SafeAreaView>
+            <Header 
+              navigation={props.navigation}
+              title="Crear Red"
+            />
       <ScrollView>
         <View>
-          
-            <Appbar.Header>
-            <Appbar.BackAction/>
-            <Appbar.Content title="Crear Red" subtitle="" />
-            <Appbar.Action icon="magnify" />
-            <Appbar.Action icon="dots-vertical" />
-            </Appbar.Header>
-
 
             <View style={styles.container}>
               <Title style={styles.title}>Reglas</Title> 
