@@ -1,67 +1,32 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { View, StyleSheet  } from 'react-native'
 import { Title, Button, Text, TextInput, Appbar, ProgressBar, Colors, Paragraph} from 'react-native-paper';
 import { Formik,FieldArray } from 'formik';
 import * as yup from 'yup'
-
-const loginValidationSchema = yup.object().shape({
-  memberName: yup
-    .string()
-    .required('Nombre es requerido'),
-  memberEmail : yup
-    .string()
-    .required('Email es requerido'),
-})
-
-const members = 
-  [
-    {
-      name: '',
-      email: '',
-    },
-  ]
+import Header from '../components/Header';
 
 
 const AddMembers = (props) => {
   const continueHandler = () => {
-    props.navigation.navigate('Rules')
+    props.navigation.navigate('CreateLoan')
   }
-  
   return (
         <View>
-            <Appbar.Header>
-            <Appbar.BackAction/>
-            <Appbar.Content title="Crear Red" subtitle="" />
-            <Appbar.Action icon="magnify" />
-            <Appbar.Action icon="dots-vertical" />
-            </Appbar.Header>
+           <Header 
+              navigation={props.navigation}
+              title="Crear Red"
+            />
  
             <View style={styles.container}>
               <Title style={styles.title}>Agregar Miembros</Title> 
               <Paragraph>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</Paragraph>
               <Formik
-                initialValues={{ memberName: '', memberEmail: '', members }}
-                validationSchema={loginValidationSchema}
+                initialValues={{ memberName: '', memberEmail: '' }}
                 onSubmit={values => console.log(values),continueHandler}
               >
                 {({ handleChange, handleBlur, handleSubmit, values, errors, isValid, touched }) => (
                   <View>
                     
-                    <FieldArray 
-                        name="members"
-                        render={arrayHelpers => (<View>
-                            <Text style={styles.label}>Nombre</Text>
-                            <TextInput
-                            style={styles.input}
-                            label="Nombre"
-                            onChangeText={handleChange('memberName')}
-                            onBlur={handleBlur('networkName')}
-                            value={values.memberName}
-                            error={errors.memberName}
-                            touched={touched.memberName}
-                          />
-                        </View>) }
-                    />
                     <Text style={styles.label}>Nombre</Text>
                     <TextInput
                       style={styles.input}
@@ -83,24 +48,18 @@ const AddMembers = (props) => {
                       error={errors.memberEmail}
                       touched={touched.memberEmail}
                     />
-
-                    <Button 
-                      mode="contained" 
-                      onPress={console.log(members), members.push({ name: values.memberName, email: values.memberEmail })} 
-                      title="Add Member" 
-                    > 
-                      Agregar Miembro
-                    </Button>
                   
   
                     <Button 
                       mode="contained" 
                       onPress={handleSubmit} 
                       title="Continue" 
-                      disabled={!isValid}> 
+                      > 
                       Continuar
                     </Button>
-    
+                    <Text>
+                      
+                    </Text>  
                   </View>
                 )}
               </Formik>
